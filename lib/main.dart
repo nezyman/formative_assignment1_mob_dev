@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'routes.dart';
+import 'task_store.dart';
 import 'theme.dart';
 
-void main() => runApp(const TaskTrackerApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Load saved tasks before the first screen is shown.
+  await taskStore.load();
+
+  runApp(const TaskTrackerApp());
+}
 
 /// Root widget of the app. It sets the theme and the named routes.
 class TaskTrackerApp extends StatelessWidget {
