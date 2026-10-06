@@ -21,7 +21,7 @@ class Task {
     this.status = TaskStatus.todo,
   });
 
-  // Task -> Map (Person 4 uses this to save)
+  // Task -> Map 
   Map<String, dynamic> toMap() => {
         'id': id,
         'title': title,
@@ -32,7 +32,7 @@ class Task {
         'status': status.name,
       };
 
-  // Map -> Task (Person 4 uses this to load)
+  // Map -> Task 
   factory Task.fromMap(Map<String, dynamic> map) => Task(
         id: map['id'],
         title: map['title'],
