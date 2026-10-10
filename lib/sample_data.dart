@@ -1,8 +1,5 @@
 import 'models.dart';
-
-/// TEMPORARY fake data so every screen can be tested.
-/// Person 4 will replace this with real saved data.
-const sampleMembers = [
+final List<TeamMember> sampleMembers = [
   TeamMember(id: '1', name: 'Lia Teta', role: 'Project Manager'),
   TeamMember(id: '2', name: 'Brian manzi', role: 'Flutter Developer'),
   TeamMember(id: '3', name: 'phionah Mwiza', role: 'UI Designer'),
