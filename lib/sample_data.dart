@@ -1,8 +1,8 @@
 import 'models.dart';
 final List<TeamMember> sampleMembers = [
   TeamMember(id: '1', name: 'Lia Teta', role: 'Project Manager'),
-  TeamMember(id: '2', name: 'Brian manzi', role: 'Flutter Developer'),
-  TeamMember(id: '3', name: 'phionah Mwiza', role: 'UI Designer'),
+  TeamMember(id: '2', name: 'Brian Manzi', role: 'Flutter Developer'),
+  TeamMember(id: '3', name: 'Phionah Mwiza', role: 'UI Designer'),
   TeamMember(id: '4', name: 'Daniel Neza', role: 'QA Tester'),
 ];
 

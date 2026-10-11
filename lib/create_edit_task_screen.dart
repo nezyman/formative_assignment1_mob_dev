@@ -66,6 +66,24 @@ class _CreateEditTaskScreenState extends State<CreateEditTaskScreen> {
     }
   }
 
+  List<String> _memberNames() {
+    final names = <String>[];
+    for (final m in sampleMembers) {
+      final exists = names.any(
+          (n) => n.trim().toLowerCase() == m.name.trim().toLowerCase());
+      if (!exists) names.add(m.name);
+    }
+    return names;
+  }
+
+  String? _memberValue() {
+    final selected = _selectedMember;
+    if (selected == null) return null;
+    final matches = _memberNames().where(
+        (n) => n.trim().toLowerCase() == selected.trim().toLowerCase());
+    return matches.isEmpty ? null : matches.first;
+  }
+
   void _saveTask() {
     if (!_formKey.currentState!.validate()) {
       return;
@@ -144,17 +162,12 @@ class _CreateEditTaskScreenState extends State<CreateEditTaskScreen> {
             const SizedBox(height: 16),
 
             DropdownButtonFormField<String>(
-              value: _selectedMember,
+              value: _memberValue(),
               decoration: const InputDecoration(
                 labelText: 'Assign to',
                 border: OutlineInputBorder(),
               ),
-              items: sampleMembers.map((member) {
-                return DropdownMenuItem<String>(
-                  value: member.name,
-                  child: Text(member.name),
-                );
-              }).toList(),
+              items: _memberNames().map((name) => DropdownMenuItem<String>(value: name, child: Text(name))).toList(),
               onChanged: (value) {
                 setState(() {
                   _selectedMember = value;
