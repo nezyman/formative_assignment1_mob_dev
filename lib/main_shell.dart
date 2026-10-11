@@ -50,12 +50,6 @@ class _MainShellState extends State<MainShell> {
           ),
         ],
       ),
-      floatingActionButton: _currentIndex == 1
-          ? FloatingActionButton(
-              onPressed: () => Navigator.pushNamed(context, AppRoutes.taskEdit),
-              child: const Icon(Icons.add),
-            )
-          : null,
       bottomNavigationBar: NavigationBar(
         selectedIndex: _currentIndex,
         onDestinationSelected: (i) => setState(() => _currentIndex = i),

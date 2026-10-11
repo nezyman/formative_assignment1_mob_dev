@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'models.dart';
-import 'sample_data.dart';
+import 'task_store.dart';
 import 'sla_helper.dart';
 import 'widgets.dart';
 
@@ -9,7 +9,14 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tasks = sampleTasks();
+    return ListenableBuilder(
+      listenable: taskStore,
+      builder: (context, _) => _buildContent(context),
+    );
+  }
+
+  Widget _buildContent(BuildContext context) {
+    final tasks = taskStore.tasks;
 
     int completed = 0;
     int onTrack = 0;
