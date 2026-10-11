@@ -5,7 +5,6 @@ import 'routes.dart';
 import 'task_list_screen.dart';
 import 'team_screen.dart';
 
-/// The main frame of the app: top bar + bottom navigation bar.
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
 
@@ -18,12 +17,10 @@ class _MainShellState extends State<MainShell> {
 
   static const _titles = ['Dashboard', 'Tasks', 'Team'];
 
-  // Teammates replace these placeholder screens with their own.
   final _pages = const [DashboardScreen(), TaskListScreen(), TeamScreen()];
 
   @override
   Widget build(BuildContext context) {
-    // The user chosen on the Sign In screen
     final user = ModalRoute.of(context)!.settings.arguments as TeamMember?;
 
     return Scaffold(
@@ -31,10 +28,10 @@ class _MainShellState extends State<MainShell> {
         title: Text(_titles[_currentIndex]),
         actions: [
           IconButton(
-            tooltip: 'Switch user',
+            tooltip: 'Log out',
             icon: const Icon(Icons.logout),
             onPressed: () =>
-                Navigator.pushReplacementNamed(context, AppRoutes.signIn),
+                Navigator.pushReplacementNamed(context, AppRoutes.welcome),
           ),
         ],
       ),
@@ -49,12 +46,10 @@ class _MainShellState extends State<MainShell> {
                   style: Theme.of(context).textTheme.bodyMedium),
             ),
           Expanded(
-            // IndexedStack keeps all pages alive; only one is visible
             child: IndexedStack(index: _currentIndex, children: _pages),
           ),
         ],
       ),
-      // "+" button only on the Tasks tab
       floatingActionButton: _currentIndex == 1
           ? FloatingActionButton(
               onPressed: () => Navigator.pushNamed(context, AppRoutes.taskEdit),

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'models.dart';
 
-/// PLACEHOLDER - Person 2 builds the real form here.
-/// A Task in the route arguments means Edit mode, otherwise Create mode.
 class CreateEditTaskScreen extends StatelessWidget {
   const CreateEditTaskScreen({super.key});
 

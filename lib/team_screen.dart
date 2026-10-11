@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// PLACEHOLDER - Person 4 builds the real Team Members screen here.
 class TeamScreen extends StatelessWidget {
   const TeamScreen({super.key});
 

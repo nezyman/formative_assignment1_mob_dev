@@ -3,7 +3,6 @@ import 'models.dart';
 import 'sla_helper.dart';
 import 'theme.dart';
 
-/// Small rounded badge showing an SLA status (icon + text + colour).
 class StatusLabel extends StatelessWidget {
   final SlaStatus status;
   const StatusLabel({super.key, required this.status});
@@ -35,7 +34,6 @@ class StatusLabel extends StatelessWidget {
   }
 }
 
-/// Reusable card that shows one task.
 class TaskCard extends StatelessWidget {
   final Task task;
   final VoidCallback? onTap;

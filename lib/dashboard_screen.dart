@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// PLACEHOLDER - Person 3 builds the real Dashboard here.
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 

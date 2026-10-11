@@ -9,14 +9,12 @@ class TeamMember {
 
   const TeamMember({required this.id, required this.name, required this.role});
 
-  /// First letters of the name, e.g. "Alice Kim" -> "AK"
   String get initials {
     final parts = name.split(' ');
     return parts.map((p) => p[0]).take(2).join().toUpperCase();
   }
 }
 
-/// A task. Person 2 and Person 4 can add fields later.
 class Task {
   final String id;
   String title;
@@ -36,9 +34,6 @@ class Task {
     this.isCompleted = false,
   });
 }
-
-/// The four SLA statuses. Person 3 decides WHEN a task gets each one.
-/// Person 1 decides how each one LOOKS (label, colour, icon).
 enum SlaStatus { onTrack, atRisk, overdue, completed }
 
 extension SlaStatusStyle on SlaStatus {
