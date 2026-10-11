@@ -5,8 +5,6 @@ import 'sample_data.dart';
 import 'theme.dart';
 import 'widgets.dart';
 
-/// Shows sample tasks so navigation can be tested.
-/// Person 2 will expand this with real data.
 class TaskListScreen extends StatelessWidget {
   const TaskListScreen({super.key});
 

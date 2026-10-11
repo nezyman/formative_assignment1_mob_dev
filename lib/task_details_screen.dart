@@ -4,13 +4,12 @@ import 'routes.dart';
 import 'sla_helper.dart';
 import 'widgets.dart';
 
-/// PLACEHOLDER - Person 2 builds the full Task Details screen.
 class TaskDetailsScreen extends StatelessWidget {
   const TaskDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Read the task passed in Navigator.pushNamed(arguments: ...)
+   
     final task = ModalRoute.of(context)!.settings.arguments as Task;
 
     return Scaffold(

@@ -4,7 +4,6 @@ import 'routes.dart';
 import 'sample_data.dart';
 import 'theme.dart';
 
-/// Screen 1: the user picks who they are (no real login needed).
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
@@ -72,7 +71,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   },
                 ),
               ),
-              // Disabled (onPressed: null) until someone is chosen
+             
               ElevatedButton(
                 onPressed: _selected == null ? null : _continue,
                 child: const Text('Continue'),

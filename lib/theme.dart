@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// All colours used in the app.
 class AppColors {
   static const primary = Color(0xFF3F51B5);
   static const background = Color(0xFFF5F6FA);
@@ -14,14 +13,13 @@ class AppColors {
   static const completed = Color(0xFF1565C0);
 }
 
-/// Standard spacing values so layouts look consistent.
 class AppSpacing {
   static const double small = 8;
   static const double medium = 16;
   static const double large = 24;
 }
 
-/// The one theme used by the whole app.
+
 class AppTheme {
   static ThemeData get light {
     return ThemeData(
