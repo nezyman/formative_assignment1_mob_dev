@@ -15,6 +15,7 @@ class TeamMember {
   }
 }
 
+/// A task shared by the task, dashboard, SLA, and storage features.
 class Task {
   final String id;
   String title;
@@ -33,6 +34,32 @@ class Task {
     required this.deadline,
     this.isCompleted = false,
   });
+
+  /// Converts a Task object into data that can be encoded as JSON.
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'description': description,
+      'assignedTo': assignedTo,
+      'priority': priority,
+      'deadline': deadline.toIso8601String(),
+      'isCompleted': isCompleted,
+    };
+  }
+
+  /// Recreates a Task object from previously saved JSON data.
+  factory Task.fromJson(Map<String, dynamic> json) {
+    return Task(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      description: json['description'] as String? ?? '',
+      assignedTo: json['assignedTo'] as String,
+      priority: json['priority'] as String? ?? 'Medium',
+      deadline: DateTime.parse(json['deadline'] as String),
+      isCompleted: json['isCompleted'] as bool? ?? false,
+    );
+  }
 }
 enum SlaStatus { onTrack, atRisk, overdue, completed }
 

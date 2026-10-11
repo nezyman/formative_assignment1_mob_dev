@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'routes.dart';
+import 'task_store.dart';
 import 'theme.dart';
 
-void main() => runApp(const TaskTrackerApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Load saved tasks before the first screen is shown.
+  await taskStore.load();
+
+  runApp(const TaskTrackerApp());
+}
 
 class TaskTrackerApp extends StatelessWidget {
   const TaskTrackerApp({super.key});
